@@ -7,4 +7,5 @@
     {{ form.password.label }} {{ form.password() }}
     <input type="submit" value="Save">
 </form>
+<a href="{{ url_for('request_reset_password') }}">Forgot your password?</a>
 {% endblock %}

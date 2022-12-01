@@ -56,3 +56,11 @@ class RequestPasswordResetForm(FlaskForm):
         user = main.User.query.filter_by(email_address=email_address.data).first()
         if not user:
             raise ValidationError('Email does not exist!')
+
+
+class ResetPasswordForm(FlaskForm):
+    password1 = PasswordField('Password', validators=[DataRequired()])
+    password2 = PasswordField(
+        'Confirm password',
+        validators=[DataRequired(), EqualTo('password1', message='Passwords do not match!')]
+    )
