@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ product.code }} {{ product.name }}</h1>
+<h4>Categories:</h4>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for category in product.categories %}
+    <tr>
+        <th scope="row">{{ category.name }}</th>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Products:</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in products %}
+    <tr>
+        <th scope="row">{{ item.code }}</th>
+        <th scope="row">{{ item.name }}</th>
+        <th scope="row"><a href="{{ url_for('show_product_item', product_id=item.id) }}">Details</a></th>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

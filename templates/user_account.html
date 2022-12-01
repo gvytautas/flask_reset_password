@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+    {{ form.csrf_token }}
+    {{ form.username.label }} {{ form.username() }}
+    {{ form.email_address.label }} {{ form.email_address() }}
+    <input type="submit" value="Update">
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ current_user.username }}</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Product</th>
+        <th scope="col">Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for order in data %}
+    <tr>
+        <th scope="row">{{ order.product.name }}</th>
+        <th scope="row">{{ order.quantity }}</th>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
